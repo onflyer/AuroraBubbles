@@ -33,7 +33,7 @@ struct Cloud: View {
             .frame(height: proxy.size.height /  provider.frameHeightRatio)
             .offset(provider.offset)
             .rotationEffect(.init(degrees: move ? rotationStart : rotationStart + 360) )
-            .animation(.linear(duration: duration), value: move)
+            .animation(.linear(duration: duration).repeatForever(autoreverses: false), value: move)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: alignment)
             .opacity(0.8)
             .onAppear {
