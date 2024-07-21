@@ -1,12 +1,5 @@
 //
 //  ContentView.swift
-//  AuroraBubbles
-//
-//  Created by Aleksandar Milidrag on 21. 7. 2024..
-//
-
-//
-//  ContentView.swift
 //  MindfulMotion
 //
 //  Created by Aleksandar Milidrag on 21. 7. 2024..
@@ -40,7 +33,7 @@ struct Cloud: View {
             .frame(height: proxy.size.height /  provider.frameHeightRatio)
             .offset(provider.offset)
             .rotationEffect(.init(degrees: move ? rotationStart : rotationStart + 360) )
-            .animation(Animation.linear(duration: duration).repeatForever(autoreverses: false))
+            .animation(.linear(duration: duration), value: move)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: alignment)
             .opacity(0.8)
             .onAppear {
@@ -84,10 +77,7 @@ struct FloatingClouds: View {
 
 
 #Preview {
-    GeometryReader { proxy in
-        FloatingClouds()
-    }
-   
+    FloatingClouds()
 }
 
 
@@ -139,4 +129,3 @@ struct Theme {
         }
     }
 }
-
