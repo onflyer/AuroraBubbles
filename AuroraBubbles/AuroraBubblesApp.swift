@@ -11,7 +11,7 @@ import SwiftUI
 struct AuroraBubblesApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            FloatingClouds()
         }
     }
 }
